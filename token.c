@@ -4,7 +4,31 @@
 #include <ctype.h>
 #include "token.h"
 
-// tokenizes a string  from the command line character by character.
+// 
+int read_line(char **line)
+{
+    /* Check parameters */
+    if( NULL == *line ) {
+        fprintf(stderr, "Error: Input to read_line() is NULL!\n");
+        return -1;
+    }
+    
+    /* Read a line */
+    (*line)[0] = '\0';
+    if( NULL == fgets(*line, MAX_INPUT_LINE, stdin) ) {
+        /* End of input stream */
+        return 1;
+    }
+    
+    /* Strip off the newline */
+    //if( '\n' == (*line)[strlen(*line)-1] ) {
+    //  (*line)[strlen(*line)-1] = '\0';
+    //}
+    
+    return 0;
+}
+
+// tokenizes a string  from the command line one cahracter at a time.
 void cltokenizer(){
 
     char ch;
