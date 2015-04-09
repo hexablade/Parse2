@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 
-void read_line(char **line);
+int read_line(char **line);
 void fptokenizer(char *line);
 void cltokenizer();
 #endif

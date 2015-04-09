@@ -4,6 +4,9 @@
 #include <ctype.h>
 #include "token.h"
 
+#define MAX_INPUT_LINE 512
+
+
 // 
 int read_line(char **line)
 {
@@ -21,9 +24,9 @@ int read_line(char **line)
     }
     
     /* Strip off the newline */
-    //if( '\n' == (*line)[strlen(*line)-1] ) {
-    //  (*line)[strlen(*line)-1] = '\0';
-    //}
+    if( '\n' == (*line)[strlen(*line)-1] ) {
+      (*line)[strlen(*line)-1] = '\0';
+    }
     
     return 0;
 }
